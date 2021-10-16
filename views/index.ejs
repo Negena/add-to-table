@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+     <div class="tables">
+       <table id="schema">
+         <tr>
+           <th>name</th>
+
+           <th>message</th>
+         </tr>
+         <tr>
+           <td>nigina
+            <a href="/edit/<%= data._id %>"><i class="fa fa-pen fa-sm"></i></a>
+            <a href="/del/<%= data._id %>"><i class="fa fa-trash fa-sm"></i></a>
+           </td>
+           <td>hello
+             <a href="/edit/<%= data._id %>"><i class="fa fa-pen fa-sm"></i></a>
+             <a href="/del/<%= data._id %>"><i class="fa fa-trash fa-sm"></i></a>
+           </tr>
+         <tr>
+           <td>nigina
+             <a href="/edit/<%= data._id %>"><i class="fa fa-pen fa-sm"></i></a>
+             <a href="/del/<%= data._id %>"><i class="fa fa-trash fa-sm"></i></a>
+         </td>
+           <td>hello
+             <a href="/edit/<%= data._id %>"><i class="fa fa-pen fa-sm"></i></a>
+             <a href="/del/<%= data._id %>"><i class="fa fa-trash fa-sm"></i></a>
+         </td>
+         </tr>
+
+     <% for (let qs of data){%>
+        <tr>
+          <td>  <%= qs.name %>
+            <a href="/edit/<%= qs._id %>"><i class="fa fa-pen fa-sm"></i></a>
+            <a href="/del/<%= qs._id %>"><i class="fa fa-trash fa-sm"></i></a>
+        </td>
+          <td>  <%= qs.msg %>
+            <a href="/edit/<%= qs._id %>"><i class="fa fa-pen fa-sm"></i></a>
+            <a href="/del/<%= qs._id %>"><i class="fa fa-trash fa-sm"></i></a>
+        </td>
+        </tr>
+      <% }%>
+   </table>
+
+  <div class="inputs">
+        <form action="/msg" method="POST">
+          <input type="text" name="name" id="user" placeholder="your name">
+          <input type="text" name="msg" id="msg" placeholder="message">
+          <input type="submit" id="btn" value="submit">
+        </form>
+
+      </div>
+
+    </div>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="../script.js"></script>
+   </html>
