@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set("view engine", 'ejs');
 
 
-mongoose.connect("mongodb+srv://user1:useronce@todo.ezpvz.mongodb.net/msg", {useNewUrlParser: true,
+mongoose.connect(process.env.CONNECT, {useNewUrlParser: true,
 useUnifiedTopology: true}, function(err){
     if (err) throw err;
     else console.log("db connected");
